@@ -29,40 +29,29 @@ let set = setInterval(playR,10)
 function ballmove(){
     // 스페이스바 누를시 공 멈추기/ 움직이기
     window.addEventListener('keydown', function(e){
-        let key = e.key;
-        let bl = true;
-        while(bl){
-            switch(key){
-                case 32:
-                    clearInterval(set)
-                    bl = false;
-                    break;
-            // 방향키로 공 움직이기
-                case 37:
-                    clearInterval(set)
-                    set = setInterval(playL,10)
-                    break;
-                case 38:
-                    clearInterval(set)
-                    set = setInterval(playT,10)
-                    break;
-                case 39:
-                    clearInterval(set)
-                    set = setInterval(playR,10)
-                    break;
-                case 40:
-                    clearInterval(set)
-                    set = setInterval(playB,10)
-                    break;
-            }
-        }
-        if(bl == false){
-            window.addEventListener('keydown', function(e){
-                let key = e.key;
-                if(key == 32){
-                    bl =true
-                }
-            })
+        let key = e.keyCode;
+        switch(key){
+            case 32:
+                clearInterval(set)
+                bl = false;
+                break;
+        // 방향키로 공 움직이기
+            case 37:
+                clearInterval(set)
+                set = setInterval(playL,10)
+                break;
+            case 38:
+                clearInterval(set)
+                set = setInterval(playT,10)
+                break;
+            case 39:
+                clearInterval(set)
+                set = setInterval(playR,10)
+                break;
+            case 40:
+                clearInterval(set)
+                set = setInterval(playB,10)
+                break;
         }
     })
 }
